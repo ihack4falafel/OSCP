@@ -149,6 +149,3 @@ echo "                                  "
 echo "[+] Cleaning up..."
 touch ~/.bash_history
 echo "Script has been completed!"
-
-
-
