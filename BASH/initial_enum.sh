@@ -5,18 +5,35 @@ if [ -z "$1" ]; then
 fi
 
 # check if packages are installed
-if [ ! type nmap &> /dev/null && ! type nikto &> /dev/null && ! type dirb &> /dev/null && ! locate enum4linux &> /dev/null]; then
-  echo "You're missing one or more of the following:"
-  echo "--------------------------------------------"
-  echo "- nmap"
-  echo "- nikto"
-  echo "- dirb"
-  echo "- enum4linux"
-  echo "Please install them and rerun the script..."
+if [ ! type nmap &> /dev/null ]; then
+  echo "                                            "
+  echo "Please install nmap and rerun the script."
+  echo "                                            "
   exit 0
 fi
 
-# go ahead and start scanning
+if [ ! type nikto &> /dev/null ]; then
+  echo "                                            "
+  echo "Please install nikto and rerun the script."
+  echo "                                            "
+  exit 0
+fi
+
+if [ ! type dirb &> /dev/null ]; then
+  echo "                                            "
+  echo "Please install dirb and rerun the script."
+  echo "                                            "
+  exit 0
+fi
+
+if [ ! locate enum4linux &> /dev/null ]; then
+  echo "                                            "
+  echo "Please install enum4linux and rerun the script."
+  echo "                                            "
+  exit 0
+fi
+
+# go ahead and start scanning        
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "@         TCP Scan         @"
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
@@ -46,9 +63,7 @@ enum4linux $1
 echo "                            "
 echo "                            "
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-echo "@       Enum4linux         @"
+echo "@   Done. happy hunting!   @"
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "                            "
-
-
 
