@@ -47,12 +47,16 @@ echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "                            "
 nikto -h http://$1/
 echo "                            "
+nikto -h https://$1/
+echo "                            "
 echo "                            "
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "@        Dirb Scan         @"
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "                            "
 dirb http://$1/ /usr/share/wordlists/dirb/big.txt
+echo "                            "
+dirb https://$1/ /usr/share/wordlists/dirb/big.txt
 echo "                            "
 echo "                            "
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
