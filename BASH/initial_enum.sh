@@ -38,7 +38,8 @@ echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "@         TCP Scan         @"
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "                            "
-nmap -p- -A $1
+#nmap -p- -A $1 
+nmap -Pn -p- -A $1 -r -n --open
 echo "                            "
 echo "                            "
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
