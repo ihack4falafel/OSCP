@@ -75,10 +75,7 @@ awk -F: '($3 == "0") {print}' /etc/passwd
 echo "                                    "
 for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done 
 echo "                                    "
-echo "+----------------------------------+"
-echo "+        BASH Histroy Cleanup      +"
-echo "+----------------------------------+"
-echo "                                  "
-echo "[+] Cleaning up..."
 touch ~/.bash_history
-echo "Script has been completed!"
+echo "+----------------------------------+"
+echo "+    Script has been completed!    +"
+echo "+----------------------------------+"
