@@ -12,17 +12,19 @@ rem # Usage      = WinPrivCheck.bat                                             
 rem #-------------------------------------------------------------------------------#
 
 @echo off
-rem Used rem instead of echo cuase it looks cleaner in comman prompt
+rem Used rem instead of echo cuase it looks cleaner in command prompt
 @echo on
 
 rem #----------#
 rem # Hostname #
 rem #----------#
+
 hostname
 
 rem #----------#
 rem # Username #
 rem #----------#
+
 echo %username%
 whoami
 echo %userprofile%
@@ -30,52 +32,62 @@ echo %userprofile%
 rem #-----------#
 rem # OS Verion #
 rem #-----------#
+
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
 
 rem #-----------------#
-rem # Avialable Users #
+rem # Available Users #
 rem #-----------------#
+
 net users
 
 rem #----------------#
 rem # Network Config #
 rem #----------------#
+
 ipconfig /all
 
 rem #--------------#
 rem # Route Config #
 rem #--------------#
+
 route print
 
 rem #-----------#
 rem # ARP Cache #
 rem #-----------#
+
 arp -a
 
 rem #---------------------#
 rem # Network Connections #
 rem #---------------------#
+
 netstat -ano
 
 rem #-------------------#
 rem # Firewall Settings #
 rem #-------------------#
+
 netsh firewall show state
 netsh firewall show config
 
 rem #------------------#
 rem # Running Services #
 rem #------------------#
+
 net start
 
 rem #-------------#
 rem # Patch Level #
 rem #-------------#
+
 wmic qfe get Caption,Description,HotFixID,InstalledOn
 
 rem #-----------------------------#
 rem # Clear-text/base64 Passwords #
 rem #-----------------------------#
+
 type c:\sysprep.inf
 type c:\sysprep\sysprep.xml
 type %WINDIR%\Panther\Unattend\Unattended.xml
