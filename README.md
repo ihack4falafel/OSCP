@@ -17,13 +17,13 @@ Collection of things made during my OSCP journey
 |
 |___ Documents
 |    |
+|    |------> Bookmark List.pdf
+|    |
 |    |------> Hunting bad characters with mona.py.pdf
 |    |
-|    |------> List of Bookmarks.pdf
-|    |
 |    |------> Upgrading half shells to fully interactive TTYs.pdf
-|
-|
+|   
+|                      
 |___ Exploits
 |    |
 |    |------> ADTVPP_v1.x.py
