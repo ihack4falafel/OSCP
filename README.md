@@ -37,7 +37,7 @@ Collection of things made during my OSCP journey
 |
 |___ Windows
      |
-     |------> post_shell_enum.bat
+     |------> WinPrivCheck.bat
      |
      |------> useradd.c
      |
