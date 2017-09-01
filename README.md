@@ -2,7 +2,7 @@
 
 Collection of things made during my OSCP journey
 
-```
+```PHP
 |
 |___ BASH
 |    |
