@@ -19,7 +19,9 @@ Collection of things made during my OSCP journey
 |    |
 |    |------> Bookmark List.pdf
 |    |
-|    |------> Hunting bad characters with mona.py.pdf
+|    |------> Hunting bad characters with mona.pdf
+|    |
+|    |------> Proxychains with Windows machine.pdf
 |    |
 |    |------> Upgrading half shells to fully interactive TTYs.pdf
 |   
