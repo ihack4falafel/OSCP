@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #---------------------------------------------------------------------------------------------#
-# Software      = SLMail_5.5.0 Server                                                         #
+# Software      = SLMail 5.5.0 Server                                                         #
 # Download Link = http://downloads.informer.com/slmail/5.5/                                   #
 # Reference     = https://www.exploit-db.com/exploits/638/                                    #
 # Date          = 9/10/2017                                                                   #
