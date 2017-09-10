@@ -37,6 +37,8 @@ Collection of things made during my OSCP journey
 |    |------> ERM2MP3C_v2.7.3.700.py
 |    |
 |    |------> FFTPS_v1.0.py
+|    |
+|    |------> SLMail_5.5.0.py
 |
 |
 |___ Windows
