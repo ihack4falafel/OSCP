@@ -59,7 +59,7 @@ if PLATFORM is "0":
   #----------------------------#
   # buffer = AAA...........AAA #
   # buffer = EIP               #
-  # buffer = NOPS              #
+  # buffer = NOPSled           #
   # buffer = payload           #
   # buffer = BBB...........BBB #
   #----------------------------#
@@ -108,7 +108,7 @@ elif PLATFORM is "1":
   #----------------------------#
   # buffer = AAA...........AAA #
   # buffer = EIP               #
-  # buffer = NOPS              #
+  # buffer = NOPSled           #
   # buffer = payload           #
   # buffer = BBB...........BBB #
   #----------------------------#

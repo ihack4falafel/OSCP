@@ -22,7 +22,7 @@ f=open("Evil_Payload.PLF","w")
 #----------------------------#
 # buffer = AAA...........AAA #
 # buffer = EIP - RET Address #
-# buffer = NOPS              #
+# buffer = NOPSled           #
 # buffer = payload           #
 # buffer = BBB...........BBB #
 #----------------------------#

