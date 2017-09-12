@@ -6,11 +6,11 @@ Hello world (•‿•)/. Here's tree layout of scripts, exploits, and documents
 |
 |___ BASH
 |    |
+|    |------> LinuxPrivCheck.sh SUID.sh
+|    |
 |    |------> SUID.sh
 |    |
 |    |------> initial_enum.sh
-|    |
-|    |------> post_shell_enum.sh
 |    |
 |    |------> unshadow_john.sh
 |
