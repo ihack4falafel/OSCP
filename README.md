@@ -1,6 +1,6 @@
 # OSCP
 
-Collection of things made during my OSCP journey (•‿•)/
+Hello world (•‿•)/. Here's tree layout of scripts, exploits, and documents made during my OSCP journey.
 
 ```PHP
 |
