@@ -1,6 +1,6 @@
 # OSCP
 
-Hello world (•‿•)/. Here's tree layout of scripts, exploits, and documents made during my OSCP journey.
+Hello world (•‿•)/ - Here's tree layout of scripts, exploits, and documents made during my OSCP journey.
 
 ```PHP
 |
@@ -8,9 +8,9 @@ Hello world (•‿•)/. Here's tree layout of scripts, exploits, and documents
 |    |
 |    |------> LinuxPrivCheck.sh
 |    |
-|    |------> SUID.sh
+|    |------> Recon.sh
 |    |
-|    |------> initial_enum.sh
+|    |------> SUID.sh
 |    |
 |    |------> unshadow_john.sh
 |
