@@ -38,6 +38,8 @@ Collection of things made during my OSCP journey
 |    |
 |    |------> FFTPS_v1.0.py
 |    |
+|    |------> PCManFTP_2.0.7.py 
+|    |
 |    |------> SLMail_5.5.0.py
 |
 |
