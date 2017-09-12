@@ -4,7 +4,7 @@
 # Reference  = https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ #
 # Author     = @ihack4falafel                                                     #
 # Date       = 9/12/2017                                                          #
-# Usage      = LinuxPrivCheck.sh                                                  #
+# Usage      = chmod +x LinuxPrivCheck.sh && ./LinuxPrivCheck.sh                  #
 #---------------------------------------------------------------------------------#
 
 echo "                                    "
@@ -65,9 +65,8 @@ sudo -l                                                                         
 echo "                                    "
 echo "---------|Users & Groups|-----------"
 echo "                                    "
-cat /etc/group                                                                                           # Check groups
-grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'                                              # Check Users
-awk -F: '($3 == "0") {print}' /etc/passwd                                                                # Alternative Check User 
+cat /etc/passwd | cut -d: -f1                                                                            # List Users
+cat /etc/group                                                                                           # Check groups                                                               # Alternative Check User 
 echo "                                    "
 echo "-----------|SUID Files|-------------"
 echo "                                    "
@@ -78,7 +77,7 @@ echo "                                    "
 cat $(locate wp-config.php) | grep "DB_USER" 2>/dev/null                                                 # Check Mysql Creds
 cat $(locate wp-config.php) | grep "DB_PASSWORD" 2>/dev/null                                             # In wp-config.php 
 cat $(locate wp-config.php) | grep "DB_HOST" 2>/dev/null                                                 # Works on WordPress
-cat $(locate wp-config.php) | grep "DB_NAME" 2>/dev/null                                                 # Servers
+cat $(locate wp-config.php) | grep "DB_NAME" 2>/dev/null                                                 # Servers only
 echo "                                    "
 echo "--------------|FSTab|---------------"
 echo "                                    "
@@ -89,8 +88,16 @@ echo "                                    "
 ls -la /etc/cron.d/                                                                                       # Check Cron Jobs
 ls -la /etc/cron.daily/                                                                                   # Alternative Check Cron Jobs
 echo "                                    "
+echo "------|World Writable Folders|------"
+Echo "                                    "
+find / -perm -222 -type d 2>/dev/null                                                                     # World Wireable Folders
+echo "                                    "
+echo "-----------|Home Directory|---------"
+echo "                                    "
+ls -ahl /home/ 2>/dev/null                                                                                # Check Home Directory
+echo "                                    "
 touch ~/.bash_history                                                                                     # Clear Command History
 echo "                                    "
-echo "+----------------------------------+"
-echo "+    Script has been completed!    +"
-echo "+----------------------------------+"
+echo "#----------------------------------#"
+echo "#    Script has been completed!    #"
+echo "#----------------------------------#"
