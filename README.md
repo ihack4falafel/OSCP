@@ -1,6 +1,6 @@
 # OSCP
 
-Collection of things made during my OSCP journey
+Collection of things made during my OSCP journey (•‿•)/
 
 ```PHP
 |
