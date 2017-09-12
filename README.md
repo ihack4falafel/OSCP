@@ -6,7 +6,7 @@ Hello world (•‿•)/. Here's tree layout of scripts, exploits, and documents
 |
 |___ BASH
 |    |
-|    |------> LinuxPrivCheck.sh SUID.sh
+|    |------> LinuxPrivCheck.sh
 |    |
 |    |------> SUID.sh
 |    |
