@@ -41,6 +41,8 @@ Hello world (•‿•)/ - Here's tree layout of scripts, exploits, and document
 |    |------> PCManFTP_2.0.7.py 
 |    |
 |    |------> SLMail_5.5.0.py
+|    |
+|    |------> VulnServer.py
 |
 |
 |___ Windows
