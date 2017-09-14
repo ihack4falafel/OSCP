@@ -32,7 +32,7 @@ Y  = '\033[33m' # Yellow  #
 
 if len(sys.argv) < 2:
   print Y+ "Usage               :" + P+  " python exploit.py <target IP>" +W
-  print Y+ "Example             :" + P+  " python exploit.py 127.0.0.1 0" +W
+  print Y+ "Example             :" + P+  " python exploit.py 127.0.0.1  " +W
   sys.exit(0)
 
 HOST     = sys.argv[1]
