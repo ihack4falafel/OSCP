@@ -1,7 +1,10 @@
-# OSCP
-
-Hello world (•‿•)/ - Here's tree layout of scripts, exploits, and documents made during my OSCP journey.
-
+# OSCP 
+    _
+  _|_|_
+  (•‿•)/
+  /|_|   Hello world, Here's list of some scripts, exploits, and documents made during my OSCP journey.    
+  _| |_
+         
 ```PHP
 |
 |___ BASH
