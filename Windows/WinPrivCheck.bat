@@ -4,15 +4,15 @@ rem #---------------------------------------------------------------------------
 rem # Name       = Windows Quick n' Dirty Privilege Escalation Check Script         #
 rem # Reference  = http://www.fuzzysecurity.com/tutorials/16.html                   #
 rem # Author     = @ihack4falafel                                                   #
-rem # Date       = 8/31/2017                                                        #
+rem # Date       = 9/15/2017                                                        #
 rem # Tested On  = Windows XP SP3 - Professional                                    #
 rem #              Windows 7 SP1  - Entrprise                                       #
 rem #              Windows 10     - Professional                                    #
-rem # Usage      = WinPrivCheck.bat                                                 #
+rem # Usage      = WinPrivCheck.bat > WinPrivCheck.txt                              #
 rem #-------------------------------------------------------------------------------#
 
 @echo off
-rem Used rem instead of echo cuase it looks cleaner in command prompt
+rem Used rem instead of echo for cleaner output in command prompt
 @echo on
 
 rem #----------#
@@ -83,6 +83,15 @@ rem # Patch Level #
 rem #-------------#
 
 wmic qfe get Caption,Description,HotFixID,InstalledOn
+
+rem #-------------------------#
+rem # File Transfer Utilities #
+rem #-------------------------#
+
+cscript /?
+powershell.exe /?
+ftp /?
+tftp /?
 
 rem #-----------------------------#
 rem # Clear-text/base64 Passwords #
