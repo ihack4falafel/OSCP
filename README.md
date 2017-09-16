@@ -1,6 +1,6 @@
 # OSCP 
    
-Hello world (•‿•)/ , Here's list of some scripts, exploits, and documents made during my OSCP journey. (•‿•)/
+Hello world (•‿•)/ , Here's list of some scripts, exploits, and documents made during my OSCP journey.
 
          
 ```PHP
