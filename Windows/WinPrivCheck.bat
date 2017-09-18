@@ -101,6 +101,11 @@ type c:\sysprep.inf
 type c:\sysprep\sysprep.xml
 type %WINDIR%\Panther\Unattend\Unattended.xml
 type %WINDIR%\Panther\Unattended.xml
+dir /s *pass*
+dir /s *cred*
+dir /s *vnc*
+dir /s *.config
+
 
 rem #----------------------------------#
 rem # *.MSI Install - SYSTEM privilege #
@@ -144,6 +149,3 @@ rem #-----------------------------#
 
 accesschk.exe /accepteula -uwqs Users c:\*.*
 accesschk.exe /accepteula -uwqs "Authenticated Users" c:\*.*
-
-
-
