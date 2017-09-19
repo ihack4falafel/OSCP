@@ -120,52 +120,60 @@ net start
 
 @echo on 
 
-rem #-----------------#
-rem # Common Exploits #
-rem #-----------------#
+rem #------------------------#
+rem # Local PrivEsc Exploits #
+rem #------------------------#
 
 @echo off
 
 rem Given this script is for all versions of Windows, I'd reference the results with the below matrix to avoid false postives.
 
 
-rem #----------------------#---------#-------#-------#---------#---------#-----# 
-rem #    Exploits Index    | 2K      | XP    | 2K3   | 2K8     | Vista   | 7   |
-rem #----------------------#---------#-------#-------#---------#---------#-----#
-rem # KB2592799 | MS11-080 |    X    | SP3   | SP3   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB979682  | KiTrap0D | SP4     | SP2/3 | SP1/2 | SP0/2   | Sp0/1   | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB2393802 | MS11-011 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB982799  | MS10-059 |    X    |   X   |   X   | ALL     | ALL     | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB979683  | MS10-021 | SP4     | SP2/3 | SP2   | SP2     | SP0/1/2 | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB2305420 | MS10-092 |    X    |   X   |   X   | SP0/1/2 | SP1/2   | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB981957  | MS10-073 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB4013081 | MS17-017 |    X    |   X   |   X   | SP2     | SP2     | SP1 |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB977165  | MS10-015 | ALL     | ALL   | ALL   | ALL     | ALL     | ALL |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB941693  | MS08-025 | SP4     | SP2   | SP1/2 | SP0     | SP0/1   |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB920958  | MS06-049 | SP4     |   X   |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB914389  | MS06-030 | ALL     | SP2   |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB908523  | MS05-055 | SP4     |   X   |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB890859  | MS05-018 | SP3/4   | SP1/2 |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB842526  | MS04-019 | SP2/3/4 |   X   |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB835732  | MS04-011 | SP2/3/4 | SP0/1 |   X   |    X    |    X    |  X  |
-rem #-----------#----------#---------#-------#-------#---------#---------#-----#
-rem # KB841872  | MS04-020 | SP4     |   X   |   X   |    X    |    X    |  X  |
-rem #----------------------#---------#-------#-------#---------#---------#-----#
+rem #----------------------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem #    Exploits Index    | 2K      | XP    | 2K3   | 2K8     | Vista   | 7   |                           Title                       |
+rem #----------------------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB2592799 | MS11-080 |    X    | SP3   | SP3   |    X    |    X    |  X  | afd.sys                  - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB3143141 | MS16-032 |    X    |   X   |   X   | SP1/2   | SP2     | SP1 | Secondary Logon          - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB2393802 | MS11-011 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 | WmiTraceMessageVa        - Local privilege Escalation | 
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB982799  | MS10-059 |    X    |   X   |   X   | ALL     | ALL     | SP0 | Chimichurri              - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB979683  | MS10-021 | SP4     | SP2/3 | SP2   | SP2     | SP0/1/2 | SP0 | Windows Kernel           - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB2305420 | MS10-092 |    X    |   X   |   X   | SP0/1/2 | SP1/2   | SP0 | Task Scheduler           - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB981957  | MS10-073 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 | Keyboard Layout          - Local privilege Escalation | 
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB4013081 | MS17-017 |    X    |   X   |   X   | SP2     | SP2     | SP1 | Registry Hive Loading    - Local privilege Escalation | 
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB977165  | MS10-015 | ALL     | ALL   | ALL   | ALL     | ALL     | ALL | User Mode to Ring        - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB941693  | MS08-025 | SP4     | SP2   | SP1/2 | SP0     | SP0/1   |  X  | win32k.sys               - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB920958  | MS06-049 | SP4     |   X   |   X   |    X    |    X    |  X  | ZwQuerySysInfo           - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB914389  | MS06-030 | ALL     | SP2   |   X   |    X    |    X    |  X  | Mrxsmb.sys               - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB908523  | MS05-055 | SP4     |   X   |   X   |    X    |    X    |  X  | APC Data-Free            - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB890859  | MS05-018 | SP3/4   | SP1/2 |   X   |    X    |    X    |  X  | CSRSS                    - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB842526  | MS04-019 | SP2/3/4 |   X   |   X   |    X    |    X    |  X  | Utility Manager          - Local privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB835732  | MS04-011 | SP2/3/4 | SP0/1 |   X   |    X    |    X    |  X  | LSASS service BoF        - Remote Code Execution      | 
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB841872  | MS04-020 | SP4     |   X   |   X   |    X    |    X    |  X  | POSIX                    - Local Privilege Escalation |
+rem #----------------------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB2975684 | MS14-040 |    X    |   X   | SP2   | SP2     | SP2     | SP1 | afd.sys Dangling Pointer - Local Privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB3136041 | MS16-016 |    X    |   X   |   X   | SP1/2   | SP2     | SP1 | WebDAV to Address        - Local Privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------# 
+rem # KB3057191 | MS15-051 |    X    |   X   | SP2   | SP2     | SP2     | SP1 | win32k.sys               - Local Privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
+rem # KB2989935 | MS14-070 |    X    |   X   | SP2   |    X    |    X    |  X  | TCP/IP                   - Local Privilege Escalation |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------# 
 
 
 wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2592799" | find /i "KB2592799" 1>NUL
@@ -179,14 +187,14 @@ IF not errorlevel 1 (
 
 )
 
-wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB979682" | find /i "KB979682" 1>NUL
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB3143141" | find /i "KB3143141" 1>NUL
 IF not errorlevel 1 (
     
-  echo KiTrap0D patch is installed :(
+  echo MS16-032 patch is installed :(
 
 ) ELSE (
 
-  echo KiTrap0D patch is NOT installed! 
+  echo MS16-032 patch is NOT installed! 
 
 )
 
@@ -354,6 +362,51 @@ IF not errorlevel 1 (
   echo MS04-020 patch is NOT installed! 
 
 )
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2975684" | find /i "KB2975684" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS14-040 patch is installed :(
+
+) ELSE (
+
+  echo MS14-040 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB3136041" | find /i "KB3136041" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS16-016 patch is installed :(
+
+) ELSE (
+
+  echo MS16-016 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB3057191" | find /i "KB3057191" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS15-051 patch is installed :(
+
+) ELSE (
+
+  echo MS15-051 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2989935" | find /i "KB2989935" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS14-070 patch is installed :(
+
+) ELSE (
+
+  echo MS14-070 patch is NOT installed! 
+
+)
+
 
 
 @echo on 
