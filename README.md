@@ -41,7 +41,9 @@ Hello world (•‿•)/ , Here's list of some scripts, exploits, and documents 
 |    |
 |    |------> FFTPS_v1.0.py
 |    |
-|    |------> PCManFTP_2.0.7.py 
+|    |------> PCManFTP_2.0.7_GET.py
+|    |
+|    |------> PCManFTP_2.0.7_USER.py
 |    |
 |    |------> SLMail_5.5.0.py
 |    |
