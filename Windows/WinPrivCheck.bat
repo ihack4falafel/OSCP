@@ -14,7 +14,7 @@ rem #---------------------------------------------------------------------------
 
 
 @echo off
-rem Used rem instead of echo for cleaner output in command prompt
+rem Used rem instead of echo for cleaner output.
 @echo on
 
 rem #----------#
@@ -126,15 +126,47 @@ rem #-----------------#
 
 @echo off
 
-rem #----------------------#
-rem #    Exploits Index    #
-rem #----------------------#
-rem # KB2592799 | MS11-080 #
-rem # KB979682  | KiTrap0D #
-rem # KB2393802 | MS11-011 #
-rem # KB982799  | MS10-059 #
-rem # KB979683  | MS10-021 #
-rem #----------------------#
+rem Given this script is for all versions of Windows, I'd reference the results with the below matrix to avoid false postives.
+
+
+rem #----------------------#---------#-------#-------#---------#---------#-----# 
+rem #    Exploits Index    | 2K      | XP    | 2K3   | 2K8     | Vista   | 7   |
+rem #----------------------#---------#-------#-------#---------#---------#-----#
+rem # KB2592799 | MS11-080 |    X    | SP3   | SP3   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB979682  | KiTrap0D | SP4     | SP2/3 | SP1/2 | SP0/2   | Sp0/1   | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB2393802 | MS11-011 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB982799  | MS10-059 |    X    |   X   |   X   | ALL     | ALL     | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB979683  | MS10-021 | SP4     | SP2/3 | SP2   | SP2     | SP0/1/2 | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB2305420 | MS10-092 |    X    |   X   |   X   | SP0/1/2 | SP1/2   | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB981957  | MS10-073 |    X    | SP2/3 | SP2   | SP2     | SP1/2   | SP0 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB4013081 | MS17-017 |    X    |   X   |   X   | SP2     | SP2     | SP1 |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB977165  | MS10-015 | ALL     | ALL   | ALL   | ALL     | ALL     | ALL |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB941693  | MS08-025 | SP4     | SP2   | SP1/2 | SP0     | SP0/1   |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB920958  | MS06-049 | SP4     |   X   |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB914389  | MS06-030 | ALL     | SP2   |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB908523  | MS05-055 | SP4     |   X   |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB890859  | MS05-018 | SP3/4   | SP1/2 |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB842526  | MS04-019 | SP2/3/4 |   X   |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB835732  | MS04-011 | SP2/3/4 | SP0/1 |   X   |    X    |    X    |  X  |
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#
+rem # KB841872  | MS04-020 | SP4     |   X   |   X   |    X    |    X    |  X  |
+rem #----------------------#---------#-------#-------#---------#---------#-----#
+
 
 wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2592799" | find /i "KB2592799" 1>NUL
 IF not errorlevel 1 (
@@ -188,6 +220,138 @@ IF not errorlevel 1 (
 ) ELSE (
 
   echo MS10-021 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2305420" | find /i "KB2305420" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS10-092 patch is installed :(
+
+) ELSE (
+
+  echo MS10-092 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB981957" | find /i "KB981957" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS10-073 patch is installed :(
+
+) ELSE (
+
+  echo MS10-073 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB4013081" | find /i "KB4013081" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS17-017 patch is installed :(
+
+) ELSE (
+
+  echo MS17-017 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB977165" | find /i "KB977165" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS10-015 patch is installed :(
+
+) ELSE (
+
+  echo MS10-015 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB941693" | find /i "KB941693" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS08-025 patch is installed :(
+
+) ELSE (
+
+  echo MS08-025 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB920958" | find /i "KB920958" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS06-049 patch is installed :(
+
+) ELSE (
+
+  echo MS06-049 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB914389" | find /i "KB914389" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS06-030 patch is installed :(
+
+) ELSE (
+
+  echo MS06-030 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB908523" | find /i "KB908523" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS05-055 patch is installed :(
+
+) ELSE (
+
+  echo MS05-055 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB890859" | find /i "KB890859" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS05-018 patch is installed :(
+
+) ELSE (
+
+  echo MS05-018 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB842526" | find /i "KB842526" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS04-019 patch is installed :(
+
+) ELSE (
+
+  echo MS04-019 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB835732" | find /i "KB835732" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS04-011 patch is installed :(
+
+) ELSE (
+
+  echo MS04-011 patch is NOT installed! 
+
+)
+
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB841872" | find /i "KB841872" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS04-020 patch is installed :(
+
+) ELSE (
+
+  echo MS04-020 patch is NOT installed! 
 
 )
 
