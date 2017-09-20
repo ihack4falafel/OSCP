@@ -7,11 +7,11 @@
 #---------------------------------------------------------------------------------#
 
 
+
 # check for IP argument
 
 if [ -z "$1" ]; then
   echo -e "\e[35m[*] Usage: \e[36m$0 <IP Address>"
-  #echo "[*] Usage: $0 <IP Address>"
   echo -e "\e[39m"
   exit 1
 fi
