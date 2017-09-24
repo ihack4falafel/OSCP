@@ -8,7 +8,7 @@ rem # Date         = 9/18/2017                                                  
 rem # Tested On    = Windows XP SP3 - Professional                                    #
 rem #                Windows 7 SP1  - Entrprise                                       #
 rem #                Windows 10     - Professional                                    #
-rem # Usage        = WinPrivCheck.bat > WinPrivCheck.txt                              #
+rem # Usage        = WinPrivCheck.bat                                                 #
 rem # Requirements = accesschk.exe(old version) - sysinternals                        #
 rem #---------------------------------------------------------------------------------#
 
@@ -45,7 +45,7 @@ rem #-----------#
 
 @echo off
 
-systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type"
 
 @echo on 
 
@@ -477,7 +477,7 @@ rem  By default WinXP SP1 grant "Authenticated Users" SERVICE_ALL_ACCESS to "SSD
 
 accesschk.exe /accepteula -uwcqv "Authenticated Users" * 
 accesschk.exe /accepteula -uwcqv "Power Users" *
-accesschk.exe /accepteula -uwcqv "Users"
+accesschk.exe /accepteula -uwcqv "Users" *
 
 @echo on 
 
@@ -487,7 +487,7 @@ rem #-------------------------------#
 
 @echo off
 
-accesschk.exe /accepteula -uwdqs Users c:\
+accesschk.exe /accepteula -uwdqs "Users" c:\
 accesschk.exe /accepteula -uwdqs "Authenticated Users" c:\
 
 @echo on 
@@ -498,7 +498,7 @@ rem #-----------------------------#
 
 @echo off
 
-accesschk.exe /accepteula -uwqs Users c:\*.*
+accesschk.exe /accepteula -uwqs "Users" c:\*.*
 accesschk.exe /accepteula -uwqs "Authenticated Users" c:\*.*
 
 @echo on 
