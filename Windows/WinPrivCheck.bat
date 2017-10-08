@@ -49,6 +49,16 @@ systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type"
 
 @echo on 
 
+rem #--------------------#
+rem # Installed Software #
+rem #--------------------#
+
+@echo off
+
+wmic product get Name, Version
+
+@echo on
+
 rem #-----------------#
 rem # Available Users #
 rem #-----------------#
