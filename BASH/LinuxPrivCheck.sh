@@ -90,13 +90,10 @@ echo -e "\e[39m"
 find / -type f -perm -u=s -exec ls -la {} + 2>/dev/null                                                  # Check SUID Files 
 echo -e "\e[34m"
 echo "                                    "
-echo "-----------|WP MySQL Creds|---------"
+echo "-----------|NO ROOT SQUASH|---------"
 echo "                                    "
 echo -e "\e[39m"
-cat $(locate wp-config.php) | grep "DB_USER" 2>/dev/null                                                 # Check Mysql Creds
-cat $(locate wp-config.php) | grep "DB_PASSWORD" 2>/dev/null                                             # In wp-config.php 
-cat $(locate wp-config.php) | grep "DB_HOST" 2>/dev/null                                                 # Works on WordPress
-cat $(locate wp-config.php) | grep "DB_NAME" 2>/dev/null                                                 # Servers only
+cat /etc/exports | grep no_root_squash
 echo -e "\e[34m"
 echo "                                    "
 echo "--------------|FSTab|---------------"
