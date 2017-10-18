@@ -1,4 +1,4 @@
-#!/bin/bash
+
 #---------------------------------------------------------------------------------#
 # Name       = Linux Quick n' Dirty Privilege Escalation Check Script             #
 # Reference  = https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ #
@@ -34,12 +34,18 @@ echo -e "\e[35m#----------------------------------#"
 echo    "                                          "
 echo -e "\e[39m"
 echo -e "\e[34m"
-echo "---------|Password Files|-----------"
+echo "----------|Password File|-----------"
 echo "                                    "
 echo -e "\e[39m"
 cat /etc/passwd  
 echo "                                    "                                                              # Password File
+echo -e "\e[39m"
+echo -e "\e[34m"
+echo "-----------|Shadow File|------------"
+echo "                                    "
+echo -e "\e[39m"
 cat /etc/shadow                                                                                          # Shadow File
+echo "                                    "
 echo -e "\e[34m"
 echo "                                    "
 echo "------------|SSH Keys|--------------"
@@ -76,11 +82,15 @@ cat /etc/sudoers                                                                
 sudo -l                                                                                                  # Check Sudo
 echo -e "\e[34m"
 echo "                                    "
-echo "---------|Users & Groups|-----------"
+echo "--------------|Users|---------------"
 echo "                                    "
 echo -e "\e[39m"
 cat /etc/passwd | cut -d: -f1                                                                            # List Users
+echo -e "\e[34m"
 echo "                                    "
+echo "-------------|Groups|---------------"
+echo "                                    "
+echo -e "\e[39m"
 cat /etc/group                                                                                           # Check Groups
 echo -e "\e[34m"
 echo "                                    "
@@ -92,8 +102,35 @@ echo -e "\e[34m"
 echo "                                    "
 echo "-----------|NO ROOT SQUASH|---------"
 echo "                                    "
-echo -e "\e[39m"
-cat /etc/exports | grep no_root_squash
+echo -e "\e[39m"                                                                                         # check no_root_squash
+if [ $(cat /etc/exports 2>/dev/null | grep no_root_squash | wc -c) -ne 0 ]
+then
+  echo "NO_ROOT_SQUASH FOUND! " && cat /etc/exports | grep no_root_squash
+else
+  echo "NO_ROOT_SQUASH NOT FOUND!"
+fi
+echo -e "\e[34m"
+echo "                                    "
+echo "-------------|CHKROOTKIT|-----------"
+echo "                                    "
+echo -e "\e[39m"                                                                                         # Check chkrootkit              
+if [ $(which chkrootkit | wc -c) -ne 0 ]
+then
+  echo -n "CHKROOTKIT FOUND! " && chkrootkit -V
+else
+  echo "CHKROOTKIT NOT FOUND!"
+fi
+echo -e "\e[34m"
+echo "                                    "
+echo "-------------|MySQL Creds|-----------"
+echo "                                    "
+echo -e "\e[39m"                                                                                         # Check MySQL Creds              
+if [ $(find / -iname wp-config.php 2>/dev/null | wc -c) -ne 0 ]
+then
+  echo "WP-CONFIG.PHP FOUND! " && cat $(locate wp-config.php) | grep DB_NAME && cat $(locate wp-config.php) | grep DB_USER && cat $(locate wp-config.php) | grep DB_PASSWORD 
+else
+  echo "WP-CONFIG.PHP NOT FOUND!"
+fi
 echo -e "\e[34m"
 echo "                                    "
 echo "--------------|FSTab|---------------"
@@ -127,4 +164,3 @@ echo -e "\e[35m#   \e[36m Script has been completed!  \e[35m  #"
 echo -e "\e[35m#----------------------------------#"
 echo    "                                          "
 echo -e "\e[39m"
-
