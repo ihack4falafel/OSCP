@@ -71,6 +71,7 @@ which wget                                                                      
 which nc                                                                                                 # Check Nc
 which netcat                                                                                             # Check Netcat
 which python                                                                                             # Check Python
+which python3                                                                                            # Check Python3
 which gcc                                                                                                # Check GCC
 which perl                                                                                               # Check Perl
 echo -e "\e[34m"
@@ -79,7 +80,6 @@ echo "-----------|Sudoers File|-----------"
 echo "                                    "
 echo -e "\e[39m"
 cat /etc/sudoers                                                                                         # Check Sudoers
-sudo -l                                                                                                  # Check Sudo
 echo -e "\e[34m"
 echo "                                    "
 echo "--------------|Users|---------------"
@@ -98,6 +98,12 @@ echo "-----------|SUID Files|-------------"
 echo "                                    "
 echo -e "\e[39m"
 find / -type f -perm -u=s -exec ls -la {} + 2>/dev/null                                                  # Check SUID Files 
+echo -e "\e[34m"
+echo "                                    "
+echo "-----------|GUID Files|-------------"
+echo "                                    "
+echo -e "\e[39m"
+find / -type f -perm -g=s -exec ls -la {} + 2>/dev/null                                                  # Check GUID Files 
 echo -e "\e[34m"
 echo "                                    "
 echo "-----------|NO ROOT SQUASH|---------"
@@ -144,6 +150,12 @@ echo "                                    "
 echo -e "\e[39m"
 ls -la /etc/cron.d/                                                                                       # Check Cron Jobs
 ls -la /etc/cron.daily/                                                                                   # Alternative Check Cron Jobs
+echo -e "\e[34m"
+echo "                                    "
+echo "-------------|Crontab|--------------"
+echo "                                    "
+echo -e "\e[39m"
+cat /etc/crontab                                                                                         # Check Crontab
 echo -e "\e[34m"
 echo "                                    "
 echo "------|World Writable Folders|------"
