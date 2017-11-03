@@ -149,6 +149,10 @@ Sometimes you'll find SQL server that have `xp_cmdshell` turned on
 meh' exec master..xp_cmdshell '<command here>' --
 ```
 
-Notes!
+Final notes!
 - Use proxy to bypass client-side javascript restrictions
 - `order by` works only with regular comments such as `--+`
+- Make sure to update ASCII range and include special characters if you're going after users table
+
+On to-do list
+- python or bash script to convert ascii to text after data extraction (rep output in this case)
