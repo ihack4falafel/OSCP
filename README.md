@@ -26,6 +26,8 @@ Hello world (•‿•)/ , Here's list of some scripts, exploits, and documents 
 |    |
 |    |------> Proxychains with Windows machine.pdf
 |    |
+|    |------> SQL Injection Cheatsheet.md
+|    |
 |    |------> Upgrading half shells to fully interactive TTYs.pdf
 |   
 |                      
