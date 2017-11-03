@@ -155,4 +155,4 @@ Final notes!
 - Make sure to update ASCII range and include special characters if you're going after users table
 
 On to-do list
-- python or bash script to convert ascii to text after data extraction (rep output in this case)
+- python or bash script to convert ascii to text after data extraction (grep output in this case)
