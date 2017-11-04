@@ -156,9 +156,11 @@ meh' exec master..xp_cmdshell '<command here>' --
 ```
 
 Final notes!
-- Use proxy to bypass client-side javascript restrictions
-- `order by` works only with regular comments such as `--+`
-- Make sure to update ASCII range and include special characters if you're going after users table
+- Use your proxy of choice to bypass client-side javascript restrictions
+- `order by` clause works only with regular comments such as `--+`
+- Make sure to update ASCII range to include special characters if you're going after users table
 
-On to-do list
-- python or bash script to convert ascii to text after data extraction (grep output in this case)
+To do list
+- Python or bash script to convert ascii to text after data extraction (grep output in this case)
+- Create outfile && loadfile templates
+
