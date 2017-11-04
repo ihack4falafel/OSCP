@@ -1,5 +1,5 @@
 #### SQL Injection Cheatsheet
-This document is collection of basic SQL command injection and should NOT be conbsiderd as reference but guide to built on. Keep in mind some of the examples below will require modification(s) such as url encode, comments, etc. Now before we contiune here is couple good to know SQL functions
+This cheatsheet should NOT be conbsiderd as reference but guide to built on. Some of the examples below will require modification(s) such as url encode, comments, etc. Before we contiune here is couple good to know SQL functions
 
 ```php
 limit <row offset>,<number of rows>                          # display rows based on offset and number  
