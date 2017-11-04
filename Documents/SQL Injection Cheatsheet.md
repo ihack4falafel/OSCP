@@ -170,7 +170,7 @@ Final notes!
 - Update ASCII range to include special characters if you're going after users table
 - `MySQL` don't have permissions to overwrite an exsisting file, make sure you go with new filename every single time with `outfile`.
 - Make sure the vulnerable paramater have false value when working with union-based SQL command injection
-- It's worth noting that all of the examples in this cheatsheet where http `GET` requests, and it shouldn't be that hard to replicate them with http `POST`requests.
+- It's worth noting that all of the examples in this cheatsheet where http `GET` requests, and it shouldn't be that hard to replicate them with http `POST`requests once you grasp the core concepts.
 
 To do list
 - Python or bash script to convert ascii to text after data extraction (grep output in this case)
