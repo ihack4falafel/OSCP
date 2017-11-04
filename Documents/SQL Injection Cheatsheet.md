@@ -171,7 +171,7 @@ Final notes!
 - `MySQL` don't have permissions to overwrite an exsisting file, make sure you go with new filename every single time with `outfile`.
 - Make sure the vulnerable paramater have false value when working with union-based SQL command injection
 - It's worth noting that all of the examples in this cheatsheet where http `GET` requests, and it shouldn't be that hard to replicate them with http `POST`requests once you grasp the core concepts.
-- You need to input true value to the vulnerable paramter for `and sleep()` to work, otherwise go with `or sleep()`. Here's an examplt for the sake of clarification
+- You need to input true value to the vulnerable paramter for `and sleep()` to work, otherwise go with `or sleep()`. Here's an example for the sake of clarification
 ```php
 http://meh.com/index.php?id=<true value>' and sleep(1) #
 http://meh.com/index.php?id=<false value>' or sleep(1) #
