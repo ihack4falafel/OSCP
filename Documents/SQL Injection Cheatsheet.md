@@ -29,6 +29,8 @@ if(<condition>,<true action>,<false action>)                 # conditional if st
 like "<string>%"                                             # checks if provided string present
 
 outfile "<url to file>"                                      # dump output of select statement into a file
+
+load_file("<url to file>")                                   # dump the content of file
 ```
 Now comes the fun part, here's combination of error, union, blind SQL command injection examples.
 
@@ -166,7 +168,7 @@ Final notes!
 - Use your proxy of choice to bypass client-side javascript restrictions
 - `order by` clause works only with regular comments such as `--+`
 - Make sure to update ASCII range to include special characters if you're going after users table
-- `outfile` don't have permissions to overwrite an exsisting file, make sure you go with new filename everytime.
+- `MySQL` don't have permissions to overwrite an exsisting file, make sure you go with new filename every single time with `outfile`.
 - Always input false value to the vulnerable paramater when working with union-based SQL command injection
 
 To do list
