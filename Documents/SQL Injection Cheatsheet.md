@@ -27,6 +27,8 @@ sleep(<number of seconds>)                                   # go to sleep for <
 if(<condition>,<true action>,<false action>)                 # conditional if statement 
 
 like "<string>%"                                             # checks if provided string present
+
+outfile "<url to file>"                                      # dump output of select statement into a file
 ```
 Now comes the fun part, here's combination of error, union, blind SQL command injection examples.
 
