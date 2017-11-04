@@ -167,7 +167,7 @@ meh' exec master..xp_cmdshell '<command here>' --
 Final notes!
 - Use your proxy of choice to bypass client-side javascript restrictions
 - `order by` clause works only with regular comments such as `--+`
-- Make sure to update ASCII range to include special characters if you're going after users table
+- Update ASCII range to include special characters if you're going after users table
 - `MySQL` don't have permissions to overwrite an exsisting file, make sure you go with new filename every single time with `outfile`.
 - Make sure the vulnerable paramater have false value when working with union-based SQL command injection
 
