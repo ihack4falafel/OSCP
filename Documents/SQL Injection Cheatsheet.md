@@ -109,7 +109,7 @@ for i in $(seq 1 10); do wfuzz -c -z range,32-127 --hw=<word count> "http://meh.
 ```
 Boolean-based error SQL command injection demo
 
-![alt text](https://j.gifs.com/599V7A.gif)
+![alt text](https://j.gifs.com/W77p8o.gif)
 
 Confirm time-based blind SQL injection using `sleep()` function
 ```php
