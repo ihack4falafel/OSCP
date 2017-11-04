@@ -162,7 +162,7 @@ Final notes!
 - `order by` clause works only with regular comments such as `--+`
 - Make sure to update ASCII range to include special characters if you're going after users table
 - `outfile` don't have permissions to overwrite an exsisting file, make sure you go with new filename everytime.
-- Always input false value into the back-end query vulnerable paramater when working with union-based SQL command injection
+- Always input false value to the vulnerable paramater when working with union-based SQL command injection
 
 To do list
 - Python or bash script to convert ascii to text after data extraction (grep output in this case)
