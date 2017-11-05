@@ -165,6 +165,7 @@ meh' exec master..xp_cmdshell '<command here>' --
 ```
 
 Final notes!
+- If you made it this far then you know that most of the SQL command injection examples are based on `MySQL` and I don't plan on making any for `MSSQL` cause I'm lazy
 - Use your proxy of choice to bypass client-side javascript restrictions
 - `order by` clause works only with regular comments such as `--+`
 - Update ASCII range to include special characters if you're going after users table
