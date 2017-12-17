@@ -3,7 +3,7 @@
 # Name       = Linux Quick n' Dirty Privilege Escalation Check Script             #
 # Reference  = https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ #
 # Author     = @ihack4falafel                                                     #
-# Date       = 9/12/2017                                                          #
+# Date       = 12/17/2017                                                          #
 # Usage      = chmod +x LinuxPrivCheck.sh && ./LinuxPrivCheck.sh                  #
 #---------------------------------------------------------------------------------#
 
@@ -117,6 +117,17 @@ else
 fi
 echo -e "\e[34m"
 echo "                                    "
+echo "----------------|EXIM|--------------"
+echo "                                    "
+echo -e "\e[39m"                                                                                         # Check exim              
+if [ $(which exim | wc -c) -ne 0 ]
+then
+  echo -n "EXIM FOUND! " && exim -bV | grep version
+else
+  echo "EXIM NOT FOUND!"
+fi
+echo -e "\e[34m"
+echo "                                    "
 echo "-------------|CHKROOTKIT|-----------"
 echo "                                    "
 echo -e "\e[39m"                                                                                         # Check chkrootkit              
@@ -176,3 +187,4 @@ echo -e "\e[35m#   \e[36m Script has been completed!  \e[35m  #"
 echo -e "\e[35m#----------------------------------#"
 echo    "                                          "
 echo -e "\e[39m"
+
