@@ -10,13 +10,13 @@
 IFS=$'\n'
 
 # Check list of running processes
-old_process=$(ps -eo command)
+old_proc=$(ps -eo command)
 
 # Look for newly created processes
 while true; do
-  new_process=$(ps -eo command)
-  diff <(echo "$old_process") <(echo "$new_process") | grep [\<\>]
+  new_proc=$(ps -eo command)
+  diff <(echo "$old_proc") <(echo "$new_proc") | grep [\<\>]
   sleep 1
-  old_process=$new_process
+  old_proc=$new_proc
 done
 
