@@ -12,10 +12,10 @@ Basic port knocking script with cool colors
 Cron job checker script that may reveal cron jobs running by root! kudos to IppSec video
 
 ### WinPrivCheck.bat
-Comprehensive Windows PrivEsc that include KBs as well as misconfiguration and its batch file
+Comprehensive Windows privesc that checks KBs as well as misconfigurations and its batch file
 
 ### SQL Injection Cheatsheet
-No SQLMap. No problem. this cheatsheet will walk you thru hot to automate things like blind SQL injection with wfuzz
+No SQLMap. No problem. This cheatsheet will walk you thru hot to automate things like blind SQL injection with wfuzz
 
 
 -------------------------------------------------------------------------------------------------------------
