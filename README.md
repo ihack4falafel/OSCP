@@ -18,7 +18,6 @@ Comprehensive Windows PrivEsc that include KBs as well as misconfiguration and i
 No SQLMap. No problem, this cheatsheet teaches you how to automate things like blind SQL injection with wfuzz
 
 
-
+-------------------------------------------------------------------------------------------------------------
 
 I'm always open to suggestion, please let me know if there is anything I can add or improve!
-@ihack4falafel
