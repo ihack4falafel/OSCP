@@ -9,7 +9,7 @@ Yes, there are far better scripts out there, However this one has less output to
 Basic port knocking script with cool colors
 
 ### CronJobChecker.sh
-Cron job checker script that may reveal cron jobs running by root! kudos to IppSec video
+Cron job checker script that may reveal cron jobs running by root! kudos to IppSec
 
 ### WinPrivCheck.bat
 Comprehensive Windows privesc that checks KBs as well as misconfigurations and its batch file
