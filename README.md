@@ -20,4 +20,4 @@ No SQLMap. No problem, this cheatsheet teaches you how to automate things like b
 
 -------------------------------------------------------------------------------------------------------------
 
-I'm always open to suggestion, please let me know if there is anything I can add or improve!
+I'm always open to suggestions, please let me know if there is anything I can add or improve!
