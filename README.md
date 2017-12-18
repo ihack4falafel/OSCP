@@ -1,70 +1,24 @@
 # OSCP 
    
-Hello world (•‿•)/ , Here's list of some scripts, exploits, and documents made during my OSCP journey.
+Hello world! This repo contain some of scripts, exploits, and documents made during my OSCP journey. The list include but not limited to the following:
 
-         
-```PHP
-|
-|___ BASH
-|    |
-|    |------> LinuxPrivCheck.sh
-|    |
-|    |------> PortKnocker.sh
-|    |
-|    |------> Recon.sh
-|    |
-|    |------> SUID.sh
-|    |
-|    |------> unshadow_john.sh
-|
-|
-|___ Documents
-|    |
-|    |------> Bookmark List.pdf
-|    |
-|    |------> Hunting bad characters with mona.pdf
-|    |
-|    |------> Proxychains with Windows machine.pdf
-|    |
-|    |------> SQL Injection Cheatsheet.md
-|    |
-|    |------> Upgrading half shells to fully interactive TTYs.pdf
-|   
-|                      
-|___ Exploits
-|    |
-|    |------> ADTVPP_v1.x.py
-|    |
-|    |------> ATMC_v1.82.50.py
-|    |
-|    |------> ATMC_v3.0.0.100.py
-|    |
-|    |------> Brainpan_v1.0.py
-|    |
-|    |------> CFTPS_v1.2.py
-|    |
-|    |------> ERM2MP3C_v2.7.3.700.py
-|    |
-|    |------> FCDTMP3C_v3.1.py 
-|    |
-|    |------> FFTPS_v1.0.py
-|    |
-|    |------> PCManFTP_2.0.7_GET.py
-|    |
-|    |------> PCManFTP_2.0.7_PORT.py
-|    |
-|    |------> PCManFTP_2.0.7_USER.py
-|    |
-|    |------> SLMail_5.5.0.py
-|    |
-|    |------> VulnServer.py
-|
-|
-|___ Windows
-     |
-     |------> WinPrivCheck.bat
-     |
-     |------> useradd.c
-     |
-     |------> wget.vbs
-```
+### LinuxPrivCheck.sh
+Yes, there are far better scripts out there, However this one has less output to go thru and its written in bash. Think basic nmap scan to look for low hanging fruit followed by more complete scan.
+
+### PortKnocker.sh
+Basic port knocking script with cool colors
+
+### CronJobChecker.sh
+Cron job checker script that may reveal cron jobs running by root! kudos to IppSec video
+
+### WinPrivCheck.bat
+Comprehensive Windows PrivEsc that include KBs as well as misconfiguration and its batch file
+
+### SQL Injection Cheatsheet
+No SQLMap. No problem, this cheatsheet teaches you how to automate things like blind SQL injection with wfuzz
+
+
+
+
+I'm always open to suggestion, please let me know if there is anything I can add or improve!
+@ihack4falafel
