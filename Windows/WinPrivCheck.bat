@@ -184,7 +184,8 @@ rem # KB3057191 | MS15-051 |    X    |   X   | SP2   | SP2     | SP2     | SP1 |
 rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
 rem # KB2989935 | MS14-070 |    X    |   X   | SP2   |    X    |    X    |  X  | TCP/IP                   - Local Privilege Escalation |
 rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------# 
-
+rem # KB2503665 | MS11-046 |    X    |  SP3  | SP2   |  SP1/2  |  SP1/2  | SP1 | 'afd.sys'                - Local Privilege Escalation |  
+rem #-----------#----------#---------#-------#-------#---------#---------#-----#-------------------------------------------------------#
 
 wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2592799" | find /i "KB2592799" 1>NUL
 IF not errorlevel 1 (
@@ -417,7 +418,16 @@ IF not errorlevel 1 (
 
 )
 
+wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB2503665" | find /i "KB2503665" 1>NUL
+IF not errorlevel 1 (
+    
+  echo MS11-046 patch is installed :(
 
+) ELSE (
+
+  echo MS11-046 patch is NOT installed! 
+
+)
 
 @echo on 
 
