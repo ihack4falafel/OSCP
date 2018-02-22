@@ -460,6 +460,16 @@ dir /s *.config
 
 @echo on 
 
+rem #--------------#
+rem # Backup Files #
+rem #--------------#
+
+@echo off
+
+dir /s *backup*
+
+@echo on 
+
 rem #----------------------------------#
 rem # *.MSI Install - SYSTEM privilege #
 rem #----------------------------------#
